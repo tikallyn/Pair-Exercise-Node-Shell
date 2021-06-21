@@ -5,6 +5,7 @@ const curl = require("./curl");
 const date = require("./date");
 const echo = require("./echo");
 const head = require("./head");
+const tail = require("./tail");
 
 const done = (output) => {
   process.stdout.write(output);
@@ -29,7 +30,9 @@ process.stdin.on("data", (data) => {
   } else if (cmd.slice(0, 4) === "echo") {
     echo(cmd.slice(5), done);
   } else if (cmd.slice(0, 4) === "head") {
-    head(cmd.slice(5), done);
+    head(cmd.slice(5));
+  } else if (cmd.slice(0, 4) === "tail") {
+    tail(cmd.slice(5));
   } else {
     process.stdout.write("You entered: " + cmd);
   }

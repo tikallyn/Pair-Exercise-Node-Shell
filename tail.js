@@ -9,7 +9,7 @@ module.exports = function (files) {
           process.stdout.write('error')
         } else {
           process.stdout.write(`\n==> ${file} <==\n`)
-          process.stdout.write(data.split("\n").slice(0, 10).join("\n"))
+          process.stdout.write(data.split("\n").slice(-10).join("\n"))
         }
       })
     })

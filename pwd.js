@@ -1,3 +1,3 @@
-module.exports = function () {
-  process.stdout.write(__dirname);
+module.exports = function (done) {
+  done(__dirname);
 };
